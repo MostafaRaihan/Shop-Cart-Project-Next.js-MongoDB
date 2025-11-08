@@ -1,66 +1,84 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
 
-export default function Home() {
+import Link from "next/link";
+import Shop from "./shop/page";
+import "./HomePage.css";
+
+export default function HomePage() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="home-page">
+      {/* Hero Section */}
+      <section className="hero">
+        <div className="hero-overlay">
+          <div className="hero-content">
+            <h1>Welcome to Interactive Shop</h1>
+            <p>Your one-stop shop for amazing products delivered fast.</p>
+            <Link href="/shop">
+              <button className="btn-hero">Start Shopping</button>
+            </Link>
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+      </section>
+
+      {/* Features Section */}
+      <section className="features">
+        <h2>Why Shop With Us?</h2>
+        <div className="feature-cards">
+          <div className="feature-card">
+            <span className="icon">🚚</span>
+            <h3>Fast Delivery</h3>
+            <p>Get your products delivered to your door in record time.</p>
+          </div>
+          <div className="feature-card">
+            <span className="icon">💳</span>
+            <h3>Secure Payments</h3>
+            <p>All transactions are 100% secure and encrypted.</p>
+          </div>
+          <div className="feature-card">
+            <span className="icon">⭐</span>
+            <h3>Top Quality</h3>
+            <p>We offer only the best products from trusted brands.</p>
+          </div>
         </div>
-      </main>
+      </section>
+
+      {/* Featured Products */}
+      <section className="featured-products">
+        <h2>Featured Products</h2>
+        <div className="products-preview">
+          <Shop preview={true} /> {/* Shop component with limited products */}
+        </div>
+        <Link href="/shop">
+          <button className="btn-view-all">View All Products</button>
+        </Link>
+      </section>
+
+      {/* Testimonials */}
+      <section className="testimonials">
+        <h2>What Our Customers Say</h2>
+        <div className="testimonial-cards">
+          <div className="testimonial-card">
+            <p>"Great products, fast shipping, and amazing service!"</p>
+            <h4>- John D.</h4>
+          </div>
+          <div className="testimonial-card">
+            <p>"I love this shop! The quality is top-notch."</p>
+            <h4>- Sarah P.</h4>
+          </div>
+          <div className="testimonial-card">
+            <p>"Highly recommend for anyone looking for reliable products."</p>
+            <h4>- Mike R.</h4>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Banner */}
+      <section className="cta-banner">
+        <h2>Ready to find your favorite products?</h2>
+        <Link href="/shop">
+          <button className="btn-cta">Shop Now</button>
+        </Link>
+      </section>
     </div>
   );
 }

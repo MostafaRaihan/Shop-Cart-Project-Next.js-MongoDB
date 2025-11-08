@@ -1,0 +1,178 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212;
+  color: #e0e0e0;
+  margin: 0;
+  padding: 0;
+}
+
+.checkout-page {
+  max-width: 1200px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.checkout-page h1 {
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 40px;
+}
+
+/* ===== Checkout Container ===== */
+.checkout-container {
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* ===== Shipping Form ===== */
+.checkout-form {
+  flex: 1 1 450px;
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: transform 0.3s ease;
+}
+
+.checkout-form:hover {
+  transform: translateY(-2px);
+}
+
+.checkout-form h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.checkout-form label {
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+.checkout-form input {
+  padding: 12px 15px;
+  border: 1px solid #333;
+  border-radius: 8px;
+  margin-top: 5px;
+  font-size: 1rem;
+  background-color: #2a2a2a;
+  color: #e0e0e0;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.checkout-form input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 8px rgba(74, 144, 226, 0.5);
+  outline: none;
+}
+
+.input-error {
+  border-color: #e74c3c;
+}
+
+.error-msg {
+  color: #e74c3c;
+  font-size: 0.85rem;
+  margin-top: 4px;
+}
+
+/* ===== Order Summary ===== */
+.order-summary {
+  flex: 1 1 350px;
+  background-color: #1e1e1e;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  height: fit-content;
+  transition: transform 0.3s ease;
+}
+
+.order-summary:hover {
+  transform: translateY(-2px);
+}
+
+.order-summary h2 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.order-summary ul {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #333;
+}
+
+.order-summary li {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  font-weight: 500;
+  border-bottom: 1px dashed #444;
+}
+
+.order-summary li:last-child {
+  border-bottom: none;
+}
+
+.order-summary h3 {
+  text-align: right;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+/* ===== Place Order Button ===== */
+.btn-place-order {
+  width: 100%;
+  padding: 15px 0;
+  background: linear-gradient(90deg, #4a90e2 0%, #357ABD 100%);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+}
+
+.btn-place-order:hover {
+  background: linear-gradient(90deg, #357ABD 0%, #2a5a9f 100%);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.7);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+  .checkout-container {
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .checkout-container {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .checkout-form,
+  .order-summary {
+    padding: 20px;
+  }
+}
