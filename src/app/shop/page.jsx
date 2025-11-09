@@ -17,7 +17,6 @@ const Shop = () => {
 
   return (
     <div style={{ padding: "2rem" }}>
-      <h1>Shop</h1>
       <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", gap: "1.5rem" }}>
         {products.length ? (
           products.map((p) => <ProductCard key={p._id} product={p} onAddToCart={() => addToCart(p)} />)

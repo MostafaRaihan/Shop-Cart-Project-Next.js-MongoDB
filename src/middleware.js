@@ -1,9 +1,8 @@
 import { NextResponse } from "next/server";
 import { withAuth } from "next-auth/middleware";
-//logging
 
 export default withAuth(
-	// Middleware function
+
 	async function middleware(req) {
 		const url = req.nextUrl.pathname;
 		const role =
@@ -36,7 +35,6 @@ export const config = {
 		"/checkout",
 		"/dashboard/:path*",
 		"/api/user/:path*",
-		"/shop",
 		"/api/:path*",
 	],
 };

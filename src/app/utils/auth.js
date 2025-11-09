@@ -3,9 +3,9 @@ import CredentialsProvider from "next-auth/providers/credentials";
 import User from "@/app/models/user";
 import bcrypt from "bcrypt";
 import connectDb from "./db";
-// backend token generate -> jwt
-// frontend -> localStorage/cookie (jwt)
-// request -> jwt
+
+console.log("NEXTAUTH_SECRET:", process.env.NEXTAUTH_SECRET);
+
 
 export const authOptions = {
 	session: {
